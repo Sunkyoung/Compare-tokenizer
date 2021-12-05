@@ -19,13 +19,14 @@
     Tokenizer | Hannanum | Kkma | Komoran | Mecab | Okt | Khaiii
     --------- | -------- | ---- | ------- | ----- | --- | ------
     Loading Time (sec) | 0.4185 | 0.0110 | 1.5994 | 0.0005 | 0.0041 | 0.0028  
-    =>  **Mecab** < Khaiii < Okt < Kkma < Hannanum < Komoran
+
+   → **Mecab** < Khaiii < Okt < Kkma < Hannanum < Komoran
 
 
 * Measuring Analyzing Time
     * Sampled 10, 100, 1000, 10000 sentences
     ![morph_result](./morph_result.png)  
-=> **Mecab** < Khaiii < Komoran < Okt < Hannanum < Kkma 
+→ **Mecab** < Khaiii < Komoran < Okt < Hannanum < Kkma 
 
 2) Subword segmentation / Word-piece
 * Package : Huggingface Tokenizers (https://github.com/huggingface/tokenizers)
@@ -49,7 +50,7 @@
 * Measuring Analyzing Time
     * Sampled 10, 100, 1000, 10000 sentences
     ![morph_result](./subword_result.png)  
-=> **SentencePiece** < Bert WordPiece < CharBPE < ByteLevelBPE
+→ **SentencePiece** < Bert WordPiece < CharBPE < ByteLevelBPE
 
 reference : 
 [https://iostream.tistory.com/144](https://iostream.tistory.com/144)
