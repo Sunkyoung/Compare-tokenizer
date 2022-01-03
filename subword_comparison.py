@@ -1,4 +1,5 @@
 from tokenizers import CharBPETokenizer, ByteLevelBPETokenizer, SentencePieceBPETokenizer, BertWordPieceTokenizer
+from tokenizers.decoders import ByteLevel
 import time
 from random import randint
 import matplotlib.pyplot as plt
@@ -24,8 +25,11 @@ def tokenizer_train(tokenizer):
 def tokenizer_output(tokenizer, name):
     y = []
     print('Original Sentence : ',lines[n])
-    output = tokenizer.encode(lines[n])
-    print('Random Analyze Result : ', output.tokens)
+    output = tokenizer.encode(lines[n]).tokens
+    if name == 'ByteLevelBPE':
+        decoder = ByteLevel()
+        output = [ decoder.decode([o]) for o in output ]
+    print('Random Analyze Result : ', output)
 
     start = time.time()
     output = tokenizer.encode(''.join(lines[:11]))
